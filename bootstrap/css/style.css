@@ -1,0 +1,16 @@
+.movie-card {
+  width: 300px; /* Increased card width */
+  margin: 10px;
+}
+
+.movie-image {
+  height: 400px; /* Increased image height */
+  width: 300px;
+  object-fit: fill;
+}
+
+.modal-movie-image {
+  height: 400px; /* Increased image height */
+  width: 300px;
+  object-fit: fill;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Top Section -->
+    <div class="container my-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="mb-0">Movies</h2>
+        <div class="input-group" style="max-width: 400px">
+          <input
+            type="text"
+            id="search-input"
+            class="form-control"
+            placeholder="Search for movies..."
+          />
+          <button id="search-button" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Content Section: Movies List -->
+    <div class="container">
+      <div
+        id="movies-list"
+        class="d-flex flex-wrap justify-content-center"
+      ></div>
+    </div>
+
+    <!-- Bottom Pagination Section -->
+    <div class="container my-4 d-flex justify-content-center">
+      <button id="prev-button" class="btn btn-secondary mx-2" disabled>
+        Prev
+      </button>
+      <span id="current-page" class="mx-3 align-self-center">1</span>
+      <button id="next-button" class="btn btn-secondary mx-2">Next</button>
+    </div>
+
+    <!-- Movie Detail Modal -->
+    <div
+      class="modal fade"
+      id="movieDetailModal"
+      tabindex="-1"
+      aria-labelledby="movieDetailModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="movieDetailModalLabel">Movie Title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body d-flex flex-column flex-md-row align-items-center"
+          >
+            <!-- Use flex-column for mobile -->
+            <div class="d-flex justify-content-center me-3 mb-3 mb-md-0">
+              <!-- Added mb-3 for spacing on mobile -->
+              <img
+                id="modalMovieImage"
+                src=""
+                alt="Movie Poster"
+                class="modal-movie-image"
+              />
+            </div>
+            <div>
+              <h6>Overview:</h6>
+              <p id="modalMovieOverview"></p>
+              <h6>Rating:</h6>
+              <p id="modalMovieRating"></p>
+              <h6>Release Date:</h6>
+              <p id="modalMovieReleaseDate"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../core/api.js"></script>
+    <script type="module" src="js/controller.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
